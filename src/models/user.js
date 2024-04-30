@@ -3,7 +3,7 @@ const database = require('../config/database');
 
 class User {
     constructor() {
-        this.model = database.define('User', {
+        this.model = database.db.define('User', {
             id: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
@@ -22,4 +22,5 @@ class User {
     }
 }
 
+module.exports = new User().model; 
 module.exports = User;
